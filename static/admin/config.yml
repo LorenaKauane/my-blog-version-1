@@ -1,0 +1,98 @@
+backend:
+  name: bitbucket
+  repo: lorenakauane/my-blog
+  # local_backend: true
+  branch: master
+  site_domain: lorenakauane.com.br
+  auth_type: implicit
+  app_id: any
+
+publish_mode: editorial_workflow
+media_folder: "static/assets/img"
+public_folder: "assets/img"
+
+collections:
+  - name: "blog-en"
+    label: "Blog - EN"
+    folder: "src/pages/blog/en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Titulo", name: "titulo", widget: "string" }
+      - {
+          label: "Data",
+          name: "data",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "image", name: "image", widget: "image" }
+      - { label: "Destaque", name: "destaque", widget: "boolean" }
+      - {
+          label: "Tag",
+          name: "tag",
+          widget: "select",
+          options:
+            [
+              "Programming",
+              "Career",
+              "GatsbyJs",
+              "Javascript",
+              "css",
+              "ReactJs",
+              "React Native",
+              "Node",
+              "Vue",
+              "random subjects",
+            ],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog-pt"
+    label: "Blog - pt"
+    folder: "src/pages/blog/pt"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "pt" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Titulo", name: "titulo", widget: "string" }
+      - {
+          label: "Data",
+          name: "data",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "image", name: "image", widget: "image" }
+      - { label: "Destaque", name: "destaque", widget: "boolean" }
+      - {
+          label: "Tag",
+          name: "tag",
+          widget: "select",
+          options:
+            [
+              "Programação",
+              "Carreira",
+              "GatsbyJs",
+              "Javascript",
+              "css",
+              "ReactJs",
+              "React Native",
+              "Node",
+              "Vue",
+              "assuntos aleatórios",
+            ],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
